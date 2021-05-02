@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Character from "./Character";
 
+const url = process.env.REACT_APP_HEROKU_API
+
 function CharacterList({ token }) {
    const [error, setError] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
    const [items, setItems] = useState([]);
-   const secret_token = token.token;
+   const authToken = token.token;
 
    useEffect(() => {
-      fetch(`https://enigmatic-reaches-86995.herokuapp.com/characters?secret_token=${secret_token}`)
+      fetch(`${url}/characters?secret_token=${authToken}`)
          .then(res => res.json())
          .then(
             (result) => {
@@ -20,7 +22,7 @@ function CharacterList({ token }) {
                setError(error);
             }
          )
-   }, [secret_token]);
+   }, [authToken]);
    
    if (error) {
       return <div>Error: {error.message}</div>;

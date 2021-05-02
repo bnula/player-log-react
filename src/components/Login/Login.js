@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import propTypes from "prop-types";
 import "./Login.css";
 
+const url = process.env.REACT_APP_HEROKU_API
+
 async function loginUser(credentials) {
    return (
-      fetch("https://enigmatic-reaches-86995.herokuapp.com/login", {
+      fetch(`${url}/login`, {
          method: "POST",
          headers: {
             "Content-Type": "application/json"

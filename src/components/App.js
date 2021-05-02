@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import CharacterList from "./CharacterList";
+import CharacterList from "../characters/CharacterList";
 import Login from "./Login/Login";
 
 function App() {
