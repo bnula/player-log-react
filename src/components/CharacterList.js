@@ -8,7 +8,7 @@ function CharacterList({ token }) {
    const secret_token = token.token;
 
    useEffect(() => {
-      fetch(`http://localhost:4000/characters?secret_token=${secret_token}`)
+      fetch(`https://enigmatic-reaches-86995.herokuapp.com/characters?secret_token=${secret_token}`)
          .then(res => res.json())
          .then(
             (result) => {

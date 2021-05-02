@@ -4,7 +4,7 @@ import "./Login.css";
 
 async function loginUser(credentials) {
    return (
-      fetch("http://localhost:4000/login", {
+      fetch("https://enigmatic-reaches-86995.herokuapp.com/login", {
          method: "POST",
          headers: {
             "Content-Type": "application/json"
