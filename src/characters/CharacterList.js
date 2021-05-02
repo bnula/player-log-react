@@ -7,7 +7,7 @@ function CharacterList({ token }) {
    const [error, setError] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
    const [items, setItems] = useState([]);
-   const authToken = token.token;
+   const authToken = token;
 
    useEffect(() => {
       fetch(`${url}/characters?secret_token=${authToken}`)

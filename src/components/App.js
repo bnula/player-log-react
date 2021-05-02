@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import CharacterList from "../characters/CharacterList";
 import Login from "./Login/Login";
+import Header from "../common/Header";
+import useToken from "./useToken"
 
 function App() {
-  const [token, setToken] = useState();
+  
+  const { token, setToken} = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />
@@ -12,8 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Player Log </h1>
       <BrowserRouter>
+        <Header>
+          <h1> Player Log </h1>
+        </Header>
         <Switch>
           <Route path="/characters">
             <CharacterList token={token}/>
