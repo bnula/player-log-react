@@ -5,9 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eeebdd;
-  background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  background-color: #476d7c;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  color: #1d3e53
 }
 
 code {

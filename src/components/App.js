@@ -4,6 +4,7 @@ import CharacterList from "../characters/CharacterList";
 import Login from "./Login/Login";
 import Header from "../common/Header";
 import useToken from "./useToken"
+import "./App.css"
 
 function App() {
   

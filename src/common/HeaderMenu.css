@@ -1,0 +1,17 @@
+.header-menu li{
+   display: inline;
+   padding: 1rem;
+   font-size: 1.5rem;
+}
+
+.header-menu a {
+   color: #77abb7;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.header-menu a:hover {
+   text-decoration: none;
+   cursor: pointer;
+   color: #476d7c;
+}
