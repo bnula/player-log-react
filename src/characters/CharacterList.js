@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Character from "./Character";
-
-const url = process.env.REACT_APP_HEROKU_API
+import loadData from "../services/loadData";
 
 function CharacterList({ token }) {
    const [error, setError] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
    const [items, setItems] = useState([]);
    const authToken = token;
+   const itemType = "characters";
 
    useEffect(() => {
-      fetch(`${url}/characters?secret_token=${authToken}`)
-         .then(res => res.json())
-         .then(
-            (result) => {
-               setIsLoaded(true);
-               setItems(result);
-            },
-            (error) => {
-               setIsLoaded(false);
-               setError(error);
-            }
-         )
-   }, [authToken]);
+    loadData(authToken, itemType)
+      .then(
+        (result) => {
+            setIsLoaded(true);
+            setItems(result);
+        },
+        (error) => {
+            setIsLoaded(false);
+            setError(error);
+        }
+      )
+   }, [authToken, itemType]);
    
    if (error) {
       return <div>Error: {error.message}</div>;
